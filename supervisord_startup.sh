@@ -11,7 +11,7 @@ if [[ $? -eq 0 ]]; then
     # small sanitization of the passwd file.
     # kubernetes will strip newlines, but we need at least one so the while 
     # loop can read the file.  this strips any empty lines after..
-    sed -i '/^$/d' /tmp/passwd
+    sed -i '/^$/d' /root/passwd1
 	while read -r user pass uid gid comment home shell; do
 		echo "username is: " $user
 		echo "password is: " $pass
