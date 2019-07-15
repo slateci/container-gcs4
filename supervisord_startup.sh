@@ -14,7 +14,7 @@ if [[ $? -eq 0 ]]; then
     sed -i '/^$/d' /root/passwd1
 	while read -r user pass uid gid comment home shell; do
 		echo "username is: " $user
-		echo "password is: " $pass
+		echo "password is: xxxxxxx"  # we dont watn to print out the password, actually
 		echo "uid is: " $uid
 		echo "gid is: " $gid
 		echo "comment is: " $comment
@@ -41,7 +41,7 @@ globus-connect-server-setup -v
 /etc/init.d/myproxy-server start
 /etc/init.d/globus-gridftp-server start
 
-while true; do sleep 3600; done # maybe do other stuff at some point.
+while true; do sleep 3600; done # we need to get some health checks in here
 
 # Now we can actually start the supervisor
 #exec /usr/bin/supervisord -c /etc/supervisord.conf
