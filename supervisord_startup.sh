@@ -25,7 +25,7 @@ if [[ $? -eq 0 ]]; then
 			echo "password seems to be empty.. cowardly refusing to continue"
 			break
 		fi
-		useradd $user -d $home -u $uid -g $gid -s $shell -p $pass
+		useradd $user -d $home -u $uid -s $shell -p $pass
 
 	done < /root/passwd1
 fi
